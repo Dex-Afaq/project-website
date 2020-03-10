@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Telemedicine System</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet"> 
+  
+        <script>
+          
+            window.onload = function() {
+
+var dataPoints = [];
+            
+           
+            
+            var chart = new CanvasJS.Chart("chartContainer", {
+                theme: "dark1",
+                title: {
+                    text: "Temprature (Celsuis)",
+                    fontColor: "#66FCF1"
+                },
+                data: [{
+                    type: "line",
+                    dataPoints: dataPoints,
+                    lineColor: "red"
+                }],
+                axisX:{
+                    title: "Time (seconds)",
+                    titleFontColor: "#66FCF1"
+                    },
+                axisY:{
+                    title: "Temprature(*C)",
+                    titleFontColor: "#66FCF1"
+                    }
+
+            });
+            updateData();
+            
+            // Initial Values
+            var xValue = 0;
+            var yValue = 10;
+            var newDataCount = 6;
+            
+            function addData(data) {
+                if(newDataCount != 1) {
+                    $.each(data, function(key, value) {
+                        dataPoints.push({x: value[0], y: parseInt(value[1])});
+                        xValue++;
+                        yValue = parseInt(value[1]);
+                    });
+                } else {
+                  
+                    dataPoints.push({x: data[0][0], y: parseInt(data[0][1])});
+                    xValue++;
+                    yValue = parseInt(data[0][1]);
+                }
+                
+                newDataCount = 1;
+                chart.render();
+                setTimeout(updateData, 1000);
+            }
+            
+            function updateData() {
+                $.getJSON("https://canvasjs.com/services/data/datapoints.php?xstart="+xValue+"&ystart="+yValue+"&length="+newDataCount+"type=json", addData);
+            }
+
+         
+            }
+
+            </script>
+            
+  
+  
+    </head>
+  
+    <body>
+        <header>
+ 
+               
+                <nav class="navbar navbar-dark navsmall">
+                    <h1 class="text-center" > A Wireless Emergency Telemedicine System for Patients Monitoring and Diagnosis</h1>
+                </nav>
+        
+
+        </header>   
+
+  
+
+        <div id="chartContainer" class="graph"></div>
+        <!-- <br><br><br><br><br><br><br><br><br><br><br>
+        <div id="chartContainer1" class="graph1">WAD</div>
+       -->
+       
+        <br><br>
+
+        
+        
+        <script src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+        <script src="https://canvasjs.com/assets/script/jquery.canvasjs.min.js"></script>
+
+        <footer class="container-fluid">
+
+            <div class="row end">
+                <h1>MADE BY:</h1>
+                <h2>MUZAMMIL NISAR <h3>FA16-EEE-015</h3></h2>
+                <h2>AFAQ RASHID <h3>FA16-EEE-030</h3></h2>
+                <h2>ABDUL BASIT <h3>FA16-EEE-029</h3></h2>
+                <br><br><br>
+                <h1>Supervised by:</h1>
+                <h2><strong>DR.</strong>Bilal Qureshi</h2>
+                
+
+            </div>
+
+            
+           
+        </footer>
+        <img src="logo.png" class="img-fluid logobottom fixed-bottom">
+    </body>
+
+    </html>

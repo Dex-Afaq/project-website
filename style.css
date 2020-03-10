@@ -1,0 +1,90 @@
+*{
+
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+nav h1
+{
+    font-size: 35px;
+   color: #66FCF1;
+
+}
+ul li
+{
+    padding: 10px 20px 10px 0px;
+}
+.navsmall
+{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+}
+body
+{
+
+    background-image: url(https://www.flywallpaper.com/mypics/max/2/28986_dark-smoky-background.png);
+    background-attachment: fixed;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #66FCF1;
+}
+
+.graph
+{
+    display: flex;
+    width: 50%;
+    height: 300px;
+    justify-content:center;
+    align-items: center;
+}
+
+.graph1
+{
+    display: flex;
+    width: 50%;
+    height: 300px;
+    justify-content:center;
+    align-items: center;
+}
+.end
+{
+    display: flex;
+    flex-direction: column;
+    margin-top: 250px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+.end h1{
+    color: white;
+}
+
+@media (max-width:768px)
+{
+    .graph
+    {
+
+            height: 200px;
+            justify-content:center;
+            align-items: center;
+    }
+    
+
+}
+
+.logobottom
+{   margin-left: auto;
+    width: 200px;
+}
+
+@media (max-width:668px)
+{
+
+    .logobottom{
+        display: none;
+    }
+}
