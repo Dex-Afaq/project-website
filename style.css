@@ -1,90 +1,77 @@
-*{
-
+* {
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
 }
-nav h1
-{
-    font-size: 35px;
-   color: #66FCF1;
+body {
+
+    background-image: url('./background.png');
+    background-attachment: fixed;
+    overflow-x: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #66FCF1;
+}
+.graph {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   
 
 }
-ul li
-{
-    padding: 10px 20px 10px 0px;
+nav h1 {
+    font-size: 35px;
+    color: #66FCF1;
+
 }
-.navsmall
-{
+ul li {
+    padding: 10px 20px 10px 0;
+}
+.navsmall {
     display: flex;
     justify-content: center;
     align-content: center;
 
 }
-body
-{
 
-    background-image: url(https://www.flywallpaper.com/mypics/max/2/28986_dark-smoky-background.png);
-    background-attachment: fixed;
+iframe {
 
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: #66FCF1;
+    width: 450px;
+    height: 260px;
+    border: 1px solid #cccccc;
+    margin-top: 50px;
 }
 
-.graph
-{
-    display: flex;
-    width: 50%;
-    height: 300px;
-    justify-content:center;
-    align-items: center;
-}
-
-.graph1
-{
-    display: flex;
-    width: 50%;
-    height: 300px;
-    justify-content:center;
-    align-items: center;
-}
-.end
-{
+.end {
     display: flex;
     flex-direction: column;
     margin-top: 250px;
     justify-content: center;
     align-items: center;
-
+    width: 100%;
 }
 
-
-.end h1{
+.end h1 {
     color: white;
 }
 
-@media (max-width:768px)
-{
-    .graph
-    {
-
-            height: 200px;
-            justify-content:center;
-            align-items: center;
-    }
-    
-
-}
-
-.logobottom
-{   margin-left: auto;
+.logobottom {
+    margin-left: auto;
     width: 200px;
 }
-
-@media (max-width:668px)
-{
-
-    .logobottom{
+@media (max-width: 767px) and (min-width: 320px) {
+    .logobottom {
         display: none;
+    }
+    iframe{
+        height: 270px;
+    }
+   
+}
+@media (max-width: 375px)
+{
+    .graph{
+        width: 80%;
     }
 }
